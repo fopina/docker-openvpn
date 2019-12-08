@@ -11,4 +11,6 @@ release:
 	               --platform linux/amd64,linux/arm64,linux/arm/v7 \
 				   --build-arg BASEIMAGE=${BASEIMAGE} \
 				   --push \
-	               -t ${IMAGE}:${VERSION} .
+	               -t ${IMAGE}:${VERSION} \
+				   -t ${IMAGE}:latest \
+				   .
