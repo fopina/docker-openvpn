@@ -1,3 +1,9 @@
+# NOTE
+
+This was a simple fork to make an image for arm32 (https://hub.docker.com/r/fopina/openvpn-arm32/).
+
+Refer to original project for credits/suggestions/documentation
+
 # OpenVPN for Docker
 
 [![Build Status](https://travis-ci.org/kylemanna/docker-openvpn.svg)](https://travis-ci.org/kylemanna/docker-openvpn)
