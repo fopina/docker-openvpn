@@ -1,13 +1,13 @@
-name: Test
+name: publish to dockerhub
 
 on:
     push:
       branches:
-      - action_test
+      - master
 
 jobs:
   build:
-    name: Test
+    name: publish to dockerhub
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
