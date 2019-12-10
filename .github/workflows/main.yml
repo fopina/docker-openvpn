@@ -13,3 +13,14 @@ jobs:
       - uses: actions/checkout@master
       - name: Install qemu-user-static
         run: docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+      - name: Create builder
+        run: docker buildx create --name builder --driver docker-container --use
+      - name: Run Buildx
+        run: |
+          docker buildx build \
+              --platform linux/amd64,linux/arm64,linux/arm/v7 \
+              --build-arg BASEIMAGE=${BASEIMAGE} \
+              --push \
+              -t ${IMAGE}:${VERSION} \
+              -t ${IMAGE}:latest \
+              .
