@@ -25,7 +25,7 @@ ovpn_getclient "$@" > $TDIR/$1.ovpn
 
 LINK=$(echo "done" | pbin -a $TDIR/$1.ovpn -e 1hour)
 
-qrc $LINK
+qrc $LINK | cat
 
 echo
 echo $1.ovpn is available for download from $LINK for one hour
