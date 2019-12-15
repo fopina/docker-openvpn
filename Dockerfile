@@ -31,3 +31,6 @@ RUN chmod a+x /usr/local/bin/*
 
 # Add support for OTP authentication using a PAM module
 ADD ./otp/openvpn /etc/pam.d/
+
+# "strong primes" my ass, DSA-like is enough
+RUN sed -i "s/dhparam -out/dhparam -dsaparam -out/" /usr/local/bin/easyrsa
