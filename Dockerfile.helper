@@ -1,0 +1,12 @@
+ARG BASEIMAGE=fopina/openvpn:latest
+FROM $BASEIMAGE
+
+RUN wget https://github.com/fopina/privatebin/releases/download/v0.2.1/pbin_linux_$(uname -m | grep -q armv && echo armv6 || echo x86_64).tar.gz \
+         -O - | tar xpzf - -C /usr/local/bin/
+
+RUN wget https://github.com/fumiyas/qrc/releases/download/v0.1.1/qrc_linux_$(uname -m | grep -q armv && echo arm || echo amd64) \
+         -O /usr/local/bin/qrc
+
+ADD ./bin_helper /usr/local/bin
+
+RUN chmod a+x /usr/local/bin/*

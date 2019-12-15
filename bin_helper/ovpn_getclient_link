@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#
+# * Generate an OpenVPN client configuration file
+# * Upload it to privatebin
+# * Display QR code with the download link
+#
+
+if [ "$DEBUG" == "1" ]; then
+    set -x
+fi
+
+set -e
+
+if [ -z "$OPENVPN" ]; then
+    export OPENVPN="$PWD"
+fi
+if ! source "$OPENVPN/ovpn_env.sh"; then
+    echo "Could not source $OPENVPN/ovpn_env.sh."
+    exit 1
+fi
+
+TDIR=$(mktemp -d)
+ovpn_getclient "$@" > $TDIR/$1.ovpn
+
+LINK=$(echo "done" | pbin -a $TDIR/$1.ovpn -e 1hour)
+
+qrc $LINK
+
+echo
+echo $1.ovpn is available for download from $LINK for one hour
+echo Link also in the QR code
