@@ -1,16 +1,16 @@
 # NOTE
 
-This was a simple fork to make an image for arm32 (https://hub.docker.com/r/fopina/openvpn-arm32/).
+This was a straight fork to make an multi-platform docker image to include arm support (https://hub.docker.com/r/fopina/openvpn/).
 
 Refer to original project for credits/suggestions/documentation
 
 # OpenVPN for Docker
 
-[![Build Status](https://travis-ci.org/kylemanna/docker-openvpn.svg)](https://travis-ci.org/kylemanna/docker-openvpn)
-[![Docker Stars](https://img.shields.io/docker/stars/kylemanna/openvpn.svg)](https://hub.docker.com/r/kylemanna/openvpn/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/kylemanna/openvpn.svg)](https://hub.docker.com/r/kylemanna/openvpn/)
-[![ImageLayers](https://images.microbadger.com/badges/image/kylemanna/openvpn.svg)](https://microbadger.com/#/images/kylemanna/openvpn)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkylemanna%2Fdocker-openvpn.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkylemanna%2Fdocker-openvpn?ref=badge_shield)
+![publish to dockerhub](https://github.com/fopina/docker-openvpn/workflows/publish%20to%20dockerhub/badge.svg)
+[![Docker Stars](https://img.shields.io/docker/stars/fopina/openvpn.svg)](https://hub.docker.com/r/fopina/openvpn/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/fopina/openvpn.svg)](https://hub.docker.com/r/fopina/openvpn/)
+[![ImageLayers](https://images.microbadger.com/badges/image/fopina/openvpn.svg)](https://microbadger.com/#/images/fopina/openvpn)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffopina%2Fdocker-openvpn.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffopina%2Fdocker-openvpn?ref=badge_shield)
 
 
 OpenVPN server in a Docker container complete with an EasyRSA PKI CA.
