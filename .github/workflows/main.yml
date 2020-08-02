@@ -25,9 +25,9 @@ jobs:
         run: |
           docker buildx build \
             --platform linux/amd64,linux/arm64,linux/arm/v7 \
-            --build-arg BASEIMAGE=alpine:3.10 \
+            --build-arg BASEIMAGE=alpine:3.12 \
             --push \
-            -t fopina/openvpn:2.4.7 \
+            -t fopina/openvpn:2.4.9.1 \
             -t fopina/openvpn:latest \
             .
       
@@ -35,9 +35,9 @@ jobs:
         run: |
           docker buildx build \
             --platform linux/amd64,linux/arm64,linux/arm/v7 \
-            --build-arg BASEIMAGE=fopina/openvpn:2.4.7 \
+            --build-arg BASEIMAGE=fopina/openvpn:2.4.9.1 \
             --push \
             -f Dockerfile.helper \
-            -t fopina/openvpn:helper-2.4.7 \
+            -t fopina/openvpn:helper-2.4.9.1 \
             -t fopina/openvpn:helper \
             .
